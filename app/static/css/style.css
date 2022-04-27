@@ -1,0 +1,32 @@
+.btn-back {
+  color: black;
+  text-decoration: none;
+}
+
+.btn-back:hover {
+  color: black;
+}
+
+.bg-white {
+  background: white;
+}
+
+table.dataframe,
+.dataframe th,
+.dataframe td {
+  border: none;
+  border-bottom: 1px solid #c8c8c8;
+  border-collapse: collapse;
+  text-align: right;
+  padding: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9em;
+}
+
+table.dataframe {
+  width: 100%;
+}
+
+tr:hover {
+  background-color: #ffff99;
+}

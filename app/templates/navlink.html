@@ -1,0 +1,12 @@
+{% for group in nav %}
+<li class="list-group-item list-group-flush">
+  <a class="nav-link text-dark" data-bs-toggle="collapse" href="{{ '#' + group|to_id }}" role="button" aria-expanded="false" aria-controls="collapseExample"> {{ group.title() }} </a>
+  <ul class="collapse px-0" id="{{ group|to_id }}">
+    {% for member in nav[group] %}
+      <li class="list-group-item" style="border: none">
+        <a class="nav-link text-dark" href="{{ url_for('form', method=member|to_url) }}">{{ member.title() }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</li>
+{% endfor %}

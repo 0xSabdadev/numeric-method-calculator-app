@@ -1,0 +1,23 @@
+{
+    "metode tertutup": [
+        "tabel",
+        "biseksi",
+        "regula falsi"
+    ],
+    "metode terbuka": [
+        "newton raphson",
+        "secant",
+        "iterasi sederhana"
+    ],
+    "diferensiasi numerik": [
+        "selisih mundur",
+        "selisih tengah", 
+        "selisih maju"
+    ],
+    "integrasi numerik": [
+        "riemann",
+        "trapezoida", 
+        "simpson 1/3", 
+        "simpson 3/8"
+    ]
+}

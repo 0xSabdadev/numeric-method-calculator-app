@@ -1,0 +1,117 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="col-md-10 col-sm-9 offset-md-2 offset-sm-3">
+  <section class="p-4">
+    <h2>
+      <a href="javascript:history.back()" class="btn-back">
+        <i class="bi bi-arrow-return-left"></i>
+      </a>
+      {{ method.title() }}
+    </h2>
+    <hr />
+    <div class="row">
+      <div class="col mb-3">
+        <div class="input-group">
+          <span class="input-group-text bg-light">Persamaan</span>
+          <input type="text" class="form-control bg-white" value="{{ data['persamaan'] }}" disabled readonly>
+        </div>
+      </div>
+
+      {% if method == "newton raphson" or method == "selisih mundur" or method == "selisih tengah" or method == "selisih maju" %}
+        <div class="col-md-6 mb-3">
+          <div class="input-group">
+            <span class="input-group-text bg-light">Turunan</span>
+            <input type="text" class="form-control bg-white" value="{{ data['turunan'] }}" disabled readonly>
+          </div>
+        </div>
+      {% elif method == "iterasi sederhana" %}
+        <div class="col-md-6 mb-3">
+          <div class="input-group">
+            <span class="input-group-text bg-light">Persamaan g(x)</span>
+            <input type="text" class="form-control bg-white" value="{{ data['persamaan_gx'] }}" disabled readonly>
+          </div>
+        </div>
+      {% elif method == "riemann" or method == "trapezoida" or method == "simpson 1/3" or method == "3/8" %}
+        <div class="col-md-6 mb-3">
+          <div class="input-group">
+            <span class="input-group-text bg-light">Integral</span>
+            <input type="text" class="form-control bg-white" value="{{ data['integral'] }}" disabled readonly>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if method == "newton raphson" or method == "iterasi sederhana" %}
+      <div class="row mb-3">
+        <div class="input-group">
+          <span class="input-group-text bg-light">Tebakan Awal</span>
+          <input type="text" class="form-control bg-white" value="{{ data['tebakan_awal'] }}" disabled readonly>
+        </div>
+      </div>
+    {% endif %} 
+    
+    {% if method != "newton raphson" and method != "iterasi sederhana" %}
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="input-group">
+            <span class="input-group-text bg-light">Batas Bawah</span>
+            <input type="text" class="form-control bg-white" value="{{ data['batas_bawah'] }}" disabled readonly>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="input-group">
+            <span class="input-group-text bg-light">Batas Atas</span>
+            <input type="text" class="form-control bg-white" value="{{ data['batas_atas'] }}" disabled readonly>
+          </div>
+        </div>
+      </div>
+    {% endif %} 
+    
+    {% if method == "tabel" or method == "riemann" or method == "trapezoida" or method == "simpson 1/3" or method == "simpson 3/8" %}
+      <div class="row mb-4">
+        <div class="input-group">
+          <span class="input-group-text bg-light">Jumlah Pembagi</span>
+          <input type="text" class="form-control bg-white" value="{{ data['jumlah_pembagi'] }}" disabled readonly>
+        </div>
+      </div>
+    {% elif method == "selisih mundur" or method == "selisih tengah" or method == "selisih maju" %}
+      <div class="row mb-4">
+        <div class="input-group">
+          <span class="input-group-text bg-light">Ukuran Langkah</span>
+          <input type="text" class="form-control bg-white" value="{{ data['ukuran_langkah'] }}" disabled readonly>
+        </div>
+      </div>
+    {% else %}
+      <div class="row mb-4">
+        <div class="input-group">
+          <span class="input-group-text bg-light">Toleransi Error</span>
+          <input type="text" class="form-control bg-white" value="{{ data['toleransi_error'] }}" disabled readonly>
+        </div>
+      </div>
+    {% endif %} 
+    
+    {% if message is defined %}
+      <div class="alert alert-danger" role="alert">
+        <b>Error :</b> {{ message }} 
+        <a href="javascript:history.back()" class="alert-link">Silahkan cari selang baru....</a>
+      </div>
+    {% endif %} 
+    
+    {% if tables is defined %}
+      <div class="table-responsive mb-3">
+        {% for table in tables %} 
+          {{ table|safe }} 
+        {% endfor %}
+      </div>
+    {% endif %} 
+    
+    {% if conclusion is defined %}
+      <div class="alert alert-info mb-3" role="alert">
+        <b>Kesimpulan :</b> {{ conclusion }}
+      </div>
+    {% endif %}
+    </div>
+  </section>
+</div>
+
+{% endblock %}

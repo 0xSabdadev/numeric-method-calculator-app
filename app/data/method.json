@@ -1,0 +1,118 @@
+{
+    "tabel": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "jumlah_pembagi": "request.form['jumlah_pembagi']"
+        },
+        "function": "metode_tabel(input_data)"
+    },
+    "biseksi": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "toleransi_error": "request.form['toleransi_error']"
+        },
+        "function": "metode_biseksi(input_data)"
+    },
+    "regula falsi": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "toleransi_error": "request.form['toleransi_error']"
+        },
+        "function": "metode_regula_falsi(input_data)"
+    },
+    "newton raphson": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "tebakan_awal": "request.form['tebakan_awal']",
+            "toleransi_error": "request.form['toleransi_error']"
+        },
+        "function": "metode_newton_raphson(input_data)"
+    },
+    "secant": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "toleransi_error": "request.form['toleransi_error']"
+        },
+        "function": "metode_secant(input_data)"
+    },
+    "iterasi sederhana": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "persamaan_gx": "request.form['persamaan_gx']",
+            "tebakan_awal": "request.form['tebakan_awal']",
+            "toleransi_error": "request.form['toleransi_error']"
+        },
+        "function": "metode_iterasi_sederhana(input_data)"
+    },
+    "selisih mundur": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "ukuran_langkah": "request.form['ukuran_langkah']"
+        },
+        "function": "metode_selisih_mundur(input_data)"
+    },
+    "selisih tengah": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "ukuran_langkah": "request.form['ukuran_langkah']"
+        },
+        "function": "metode_selisih_tengah(input_data)"
+    },
+    "selisih maju": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "ukuran_langkah": "request.form['ukuran_langkah']"
+        },
+        "function": "metode_selisih_maju(input_data)"
+    },
+    "riemann": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "jumlah_pembagi": "request.form['jumlah_pembagi']"
+        },
+        "function": "metode_riemann(input_data)"
+    },
+    "trapezoida": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "jumlah_pembagi": "request.form['jumlah_pembagi']"
+        },
+        "function": "metode_trapezoida(input_data)"
+    },
+    "simpson 1/3": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "jumlah_pembagi": "request.form['jumlah_pembagi']"
+        },
+        "function": "metode_simpson_1_3(input_data)"
+    },
+    "simpson 3/8": {
+        "input": {
+            "persamaan": "request.form['persamaan']",
+            "batas_bawah": "request.form['batas_bawah']",
+            "batas_atas": "request.form['batas_atas']",
+            "jumlah_pembagi": "request.form['jumlah_pembagi']"
+        },
+        "function": "metode_simpson_3_8(input_data)"
+    }
+}

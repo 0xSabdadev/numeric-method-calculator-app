@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="col-md-10 col-sm-9 offset-md-2 offset-sm-3">
+  <section class="p-4">
+    <h2>{{ method.title() }}</h2>
+    <hr />
+    <form action="{{ url_for('result', method=method|to_url) }}" method="POST">
+      <div class="mb-3">
+        <label for="persamaan" class="form-label">Persamaan</label>
+        <input type="text" class="form-control" id="persamaan" placeholder="" name="persamaan" required />
+        <small class="form-text text-muted">Contoh : 4x^3 + 7x + 3</small>
+      </div>
+
+      {% if method == "iterasi sederhana" %}
+        <div class="mb-3">
+          <label for="persamaanGx" class="form-label">Persamaan g(x)</label>
+          <input type="text" class="form-control" id="persamaanGx" placeholder="" name="persamaan_gx" required />
+        </div>
+      {% endif %} 
+      
+      {% if method == "newton raphson" or method == "iterasi sederhana" %}
+        <div class="mb-3">
+          <label for="tebakanAwal" class="form-label">Tebakan Awal</label>
+          <input type="text" class="form-control" id="tebakanAwal" placeholder="" name="tebakan_awal" required />
+        </div>
+      {% endif %} 
+      
+      {% if method != "newton raphson" and method != "iterasi sederhana" %}
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="batasBawah" class="form-label">Batas Bawah</label>
+            <input type="text" class="form-control" id="batasBawah" placeholder="" name="batas_bawah" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="batasAtas" class="form-label">Batas Atas</label>
+            <input type="text" class="form-control" id="batasAtas" placeholder="" name="batas_atas" required />
+          </div>
+        </div>
+      {% endif %} 
+      
+      {% if method == "tabel" or method == "riemann" or method == "trapezoida" or method == "simpson 1/3" or method == "simpson 3/8" %}
+        <div class="mb-3">
+          <label for="jumlahPembagi" class="form-label">Jumlah Pembagi</label>
+          <input type="text" class="form-control" id="jumlahPembagi" placeholder="" name="jumlah_pembagi" required />
+        </div>
+      {% elif method == "selisih mundur" or method == "selisih tengah" or method == "selisih maju" %}
+        <div class="mb-3">
+          <label for="ukuranLangkah" class="form-label">Ukuran Langkah</label>
+          <input type="text" class="form-control" id="ukuranLangkah" placeholder="" name="ukuran_langkah" required />
+        </div>
+      {% else %}
+        <div class="mb-3">
+          <label for="toleransiError" class="form-label">Toleransi Error</label>
+          <input type="text" class="form-control" id="toleransiError" placeholder="" name="toleransi_error" required />
+          <small class="form-text text-muted">Contoh : 0.0001</small>
+        </div>
+      {% endif %}
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
+</div>
+
+{% endblock %}
