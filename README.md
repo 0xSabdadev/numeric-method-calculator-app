@@ -1,5 +1,4 @@
-# Met-Num
-Kalkulator Metode Numerik.
+# Numeric Method Calculator
 
 ## Tampilan Aplikasi
 
@@ -7,7 +6,7 @@ Kalkulator Metode Numerik.
 ![](/design/design-result-1.PNG)
 ![](/design/design-result-2.PNG)
 
-## Penggunaan
+## How to use
 
 1. Clone atau pull repository ini
 2. Jalankan perintah ini
