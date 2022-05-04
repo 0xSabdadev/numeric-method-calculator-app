@@ -21,7 +21,7 @@ $ pip install -r requirements.txt
 $ cd <path:repository> python run.py
 ```
 
-## Fitur
+## Fitur:
 
 <table>
   <thead>
